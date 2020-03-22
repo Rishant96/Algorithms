@@ -3,7 +3,7 @@ from aardee_utils.printing import print_2d_arr
 import time
 
 
-@timed(3)
+@timed(scale=3)
 def tableaufy(arr, m, n):
     for _ in range(100000000):
         pass

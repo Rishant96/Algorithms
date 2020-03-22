@@ -1,10 +1,10 @@
 from time import thread_time_ns
 
 
-def timed(time_scale=0):
+def timed(scale=0):
     """
     Calculates execution time of a function.
-    Usage: @timed(time_sacle=3)
+    Usage: @timed(scale=3)
     Parameters,
         time_scale (int, 0-9): sets the precision, where,
             0 - seconds,
@@ -20,7 +20,7 @@ def timed(time_scale=0):
             old_time = thread_time_ns()
             result = func(*args, **kwargs)
             new_time = thread_time_ns()
-            fraction = 9 - time_scale
+            fraction = 9 - scale
             fraction_switcher = {
                 0: 'seconds',
                 1: 'deciseconds',
@@ -29,8 +29,8 @@ def timed(time_scale=0):
                 6: 'microseconds',
                 9: 'nanoseconds',
             }
-            time_desc = fraction_switcher.get(time_scale,
-                                              '10**'+str(time_scale))
+            time_desc = fraction_switcher.get(scale,
+                                              '10**'+str(scale))
             print('Time taken for test to conclude: '
                   f'{float((new_time - old_time)/(10**fraction))} '
                   '(in ' + time_desc + ')',
