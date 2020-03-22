@@ -1,9 +1,9 @@
-from utils.decorators import timed
-from utils.printing import print_2d_arr
+from aardee_utils.decorators import timed
+from aardee_utils.printing import print_2d_arr
 import time
 
 
-@timed()
+@timed(3)
 def tableaufy(arr, m, n):
     for _ in range(100000000):
         pass
