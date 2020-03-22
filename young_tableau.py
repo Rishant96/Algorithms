@@ -5,8 +5,7 @@ import time
 
 @timed(scale=3)
 def tableaufy(arr, m, n):
-    for _ in range(100000000):
-        pass
+    time.sleep(1.5)
 
 
 def main():

@@ -1,4 +1,4 @@
-from time import thread_time_ns
+from time import perf_counter_ns
 
 
 def timed(scale=0):
@@ -17,9 +17,9 @@ def timed(scale=0):
     """
     def timer_decorator(func):
         def timed_function(*args, **kwargs):
-            old_time = thread_time_ns()
+            old_time = perf_counter_ns()
             result = func(*args, **kwargs)
-            new_time = thread_time_ns()
+            new_time = perf_counter_ns()
             fraction = 9 - scale
             fraction_switcher = {
                 0: 'seconds',
